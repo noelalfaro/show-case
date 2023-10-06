@@ -1,0 +1,25 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* body {
+  background-image: url("./assets/chicago-map.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
+/* 
+@media (max-width: 380px) {
+  body {
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-size: fill;
+  }
+} */
