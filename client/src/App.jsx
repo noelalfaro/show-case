@@ -26,22 +26,23 @@ const App = () => {
   let element = useRoutes([
     {
       path: "/",
-      element: <Events data={events} />,
+      element: <MainMenu />,
     },
     {
-      path: "/grant-park",
-      element: <GrantPark />,
-    },
-    {
-      path: "/millenium-park",
+      path: "/1",
       element: <MillenniumPark />,
     },
     {
-      path: "/united-center",
+      path: "/2",
+      element: <GrantPark />,
+    },
+
+    {
+      path: "/3",
       element: <UnitedCenter />,
     },
     {
-      path: "/symphony-center",
+      path: "/4",
       element: <SymphonyCenter />,
     },
     {
@@ -55,14 +56,24 @@ const App = () => {
       <header>
         <div className="header-container">
           <div className="header-left">
-            <h1>Showcase</h1>
+            <Link to="/">
+              <h1>Showcase</h1>
+            </Link>
           </div>
           <div className="header-right">
             <div className="venue-options">
-              <Link to="/grant-park">Grant Park</Link>
-              <Link to="/millenium-park">Millennium Park</Link>
-              <Link to="/united-center">United Center</Link>
-              <Link to="/symphony-center">Symphony Center</Link>
+              <Link to="/1">
+                <button>Millennium Park</button>
+              </Link>
+              <Link to="/2">
+                <button>Grant Park</button>
+              </Link>
+              <Link to="/3">
+                <button>United Center</button>
+              </Link>
+              <Link to="/4">
+                <button>Symphony Center</button>
+              </Link>
             </div>
           </div>
         </div>

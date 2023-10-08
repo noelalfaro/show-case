@@ -14,13 +14,17 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  /* color: #646cff; */
   text-decoration: inherit;
 }
-a:hover {
-  color: #535bf2;
-}
 
+a:visited {
+  color: currentColor;
+}
+img {
+  border-radius: 8px;
+  margin: 0;
+}
 body {
   margin: 0;
   display: flex;
@@ -61,6 +65,11 @@ button:focus-visible {
     background-color: #e5e5e5; /* Change to your desired light background color */
     color: #000000; /* Change to your desired light text color */
     /* Add other light mode styles here */
+  }
+
+  button {
+    background-color: #e5e5e5;
+    border: 2px solid #242424;
   }
 
   /* Add any specific styles for light mode inside this media query */

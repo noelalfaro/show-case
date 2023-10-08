@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
+import Card from "../components/Card";
+import SymphonyIMG from "../assets/symphony.jpg";
 
 const SymphonyCenter = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const response = await fetch(
-        "http://localhost:3001/events/symphony-center"
-      );
+      const response = await fetch("http://localhost:3001/events/4");
       const data = await response.json();
       setEvents(data);
     };
@@ -16,17 +16,26 @@ const SymphonyCenter = () => {
 
   return (
     <div className="venue-page">
-      <h2>Events at Symphony Center</h2>
+      <div className="venue-info">
+        <img src={SymphonyIMG} alt="symphony.jpg" />
+        <h2>Events at Symphony Center</h2>
+      </div>
+
       <div className="event-list">
-        {events.map((event) => (
-          <div key={event.id}>
-            <h3>{event.name}</h3>
-            <p>Price: {event.pricePoint}</p>
-            <p>Great For: {event.audienceSize}</p>
-            <p>Venue: {event.venue}</p>
-            <p>Description: {event.description}</p>
-          </div>
-        ))}
+        {events.length === 0 ? (
+          <p>No events to display</p>
+        ) : (
+          events.map((event) => (
+            <Card
+              key={event.id}
+              name={event.name}
+              pricepoint={event.pricepoint}
+              audiencesize={event.audiencesize}
+              venue={event.venue}
+              description={event.description}
+            />
+          ))
+        )}
       </div>
       {/* Add a link or button to navigate back to the home page */}
     </div>

@@ -17,7 +17,6 @@ const Events = (props) => {
             <Card
               id={event.id}
               key={event.id}
-              image={event.image}
               name={event.name}
               pricepoint={event.pricepoint}
               audiencesize={event.audienceSize}

@@ -8,23 +8,23 @@ const getEvents = async (req, res) => {
     res.status(409).json({ error: error.message });
   }
 };
-
-const getEventsByVenue = async (req, res) => {
+const getEventsByVenueId = async (req, res) => {
   try {
-    const venue = req.params.venue;
+    const venueId = req.params.venueId; // Convert to lowercase
     const selectQuery = `
-      SELECT name, pricePoint, audienceSize, image, description, venue
+      SELECT id, name, pricePoint, audienceSize, description, venue, venueId
       FROM events
-      WHERE venue = ${venue}
+      WHERE venueId = $1
     `;
-    const results = await pool.query(selectQuery);
+    const results = await pool.query(selectQuery, [venueId]);
 
     res.status(200).json(results.rows);
   } catch (error) {
     res.status(409).json({ error: error.message });
   }
 };
+
 export default {
   getEvents,
-  getEventsByVenue,
+  getEventsByVenueId,
 };

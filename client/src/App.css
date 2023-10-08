@@ -5,21 +5,65 @@
   text-align: center;
 }
 
-/* body {
-  background-image: url("./assets/chicago-map.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
-/* 
-@media (max-width: 380px) {
-  body {
-    background-size: contain;
-    background-position: center;
-  }
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
 }
 
-@media (max-width: 768px) {
-  body {
-    background-size: fill;
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.venue-options {
+  display: flex;
+  gap: 1em;
+}
+.card {
+  padding: 2em;
+  border: 2px solid #999999;
+  margin-bottom: 2em;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin: 0;
+}
+
+.venue-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1em;
+}
+
+.venue-page h2 {
+  margin: 0.5em;
+}
+
+.venue-page img {
+  height: 200px;
+}
+
+.event-list {
+  text-align: left;
+}
+
+b {
+  padding: 0.5em;
+  /* border: 2px solid #999999; */
+  border-radius: 4px;
+  color: #1a1a1a;
+  background-color: #dcdcdc;
+}
+
+@media (prefers-color-scheme: light) {
+  b {
+    color: #dcdcdc;
+    background-color: black;
   }
-} */
+}

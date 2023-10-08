@@ -1,32 +1,52 @@
 import React, { useState, useEffect } from "react";
+import Card from "../components/Card";
+import UnitedIMG from "../assets/united.png";
 
 const UnitedCenter = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const response = await fetch(
-        "http://localhost:3001/events/united-center"
-      );
-      const data = await response.json();
-      setEvents(data);
+      try {
+        const response = await fetch("http://localhost:3001/events/3");
+        if (!response.ok) {
+          console.error(
+            `Error fetching events: ${response.status} - ${response.statusText}`
+          );
+          return;
+        }
+        const data = await response.json();
+        console.log("Data received:", data);
+        setEvents(data);
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
     };
     fetchEvents();
   }, []);
 
   return (
     <div className="venue-page">
-      <h2>Events at United Center</h2>
+      <div className="venue-info">
+        <img src={UnitedIMG} alt="united.png" />
+        <h2>Events at United Center</h2>
+      </div>
+
       <div className="event-list">
-        {events.map((event) => (
-          <div key={event.id}>
-            <h3>{event.name}</h3>
-            <p>Price: {event.pricePoint}</p>
-            <p>Great For: {event.audienceSize}</p>
-            <p>Venue: {event.venue}</p>
-            <p>Description: {event.description}</p>
-          </div>
-        ))}
+        {events.length === 0 ? (
+          <p>No events to display</p>
+        ) : (
+          events.map((event) => (
+            <Card
+              key={event.id}
+              name={event.name}
+              pricepoint={event.pricepoint}
+              audiencesize={event.audiencesize}
+              venue={event.venue}
+              description={event.description}
+            />
+          ))
+        )}
       </div>
       {/* Add a link or button to navigate back to the home page */}
     </div>

@@ -2,9 +2,9 @@
 
 Submitted by: Noel Alfaro
 
-About this web app: In this project, you'll create a virtual community space with an interactive interface that allows users to explore events by location. The user should be able to click on one of at least four locations and view events that have occurred or will occur there. Your virtual community can be real or imagined, but your site should help your target user find interesting stuff to do.
+Showcase is a webapp built with Node.js, express, & react, connected to a PostgresSQL database. Built with a MVC architecture, the frontend makes fetch calls to the node server which returns event information displayed by react.
 
-Time spent: **4** hours
+Time spent: **6** hours
 
 ## Required Features
 
@@ -16,9 +16,9 @@ The following **required** functionality is completed:
 - [x] **The web app is connected to a PostgreSQL database, with an appropriately structured Events table**
   - [x] **NOTE: Your GIF or a screenshot added to this README must include a view of your Railway database that shows the contents of the table used by your app**
 - [x] **The web app displays the title of the app**
-- [ ] **A visual interface allows the user to select a Location they would like to view**
-- [ ] **Clicking on a Location shows a list of all items from the Events table that corresponds to that Location**
-- [ ] **Each Location detail page should have its own unique URL**
+- [x] **A visual interface allows the user to select a Location they would like to view**
+- [x] **Clicking on a Location shows a list of all items from the Events table that corresponds to that Location**
+- [x] **Each Location detail page should have its own unique URL**
 
 The following **optional** features are implemented:
 
